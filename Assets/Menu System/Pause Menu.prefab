@@ -289,6 +289,10 @@ PrefabInstance:
       propertyPath: firstSelectedObject
       value: 
       objectReference: {fileID: 9216712039400964244}
+    - target: {fileID: 4114437033935208277, guid: b988328e95e54aa44a24615a03bfb510, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5233826233015654408, guid: b988328e95e54aa44a24615a03bfb510, type: 3}
       propertyPath: m_Name
       value: Config Section
@@ -561,6 +565,10 @@ PrefabInstance:
       propertyPath: firstSelectedObject
       value: 
       objectReference: {fileID: 6212790969187123135}
+    - target: {fileID: 4114437033935208277, guid: b988328e95e54aa44a24615a03bfb510, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5233826233015654408, guid: b988328e95e54aa44a24615a03bfb510, type: 3}
       propertyPath: m_Name
       value: Pause Section
@@ -1238,6 +1246,10 @@ PrefabInstance:
       propertyPath: firstSelectedObject
       value: 
       objectReference: {fileID: 2348698625393066391}
+    - target: {fileID: 4114437033935208277, guid: b988328e95e54aa44a24615a03bfb510, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5233826233015654408, guid: b988328e95e54aa44a24615a03bfb510, type: 3}
       propertyPath: m_Name
       value: Controls Section

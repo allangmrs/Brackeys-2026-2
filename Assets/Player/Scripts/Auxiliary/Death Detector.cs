@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -23,7 +24,7 @@ namespace Player
             col = GetComponent<Collider2D>();
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerStay2D(Collider2D collision)
         {
             if (playerBehaviourData.hostileTags.Contains(collision.tag))
             {
@@ -48,6 +49,9 @@ namespace Player
         private void FinishDeath()
         {
             OnPlayerDeathCompleted?.Invoke();
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // Para testar melhor
+
         }
     }
 }

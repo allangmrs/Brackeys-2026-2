@@ -1,18 +1,23 @@
 using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 
 public class BF_CO_objectFollowY : BF_ChangeObject
 {
     public float vel;
 
     Transform player;
+    Vector3 originalPos;
+    bool following = false;
 
     
 
     protected override void Awake()
     {
         base.Awake();
+
+        originalPos = transform.position;
     }
 
     protected override void Start()
@@ -31,9 +36,13 @@ public class BF_CO_objectFollowY : BF_ChangeObject
     {
         base.FixedUpdate();
 
-        if (state)
+        if (following)
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2 (transform.position.x, player.position.y), Time.deltaTime * vel);
+        }
+        else if (!following && transform.position != originalPos)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, originalPos, Time.deltaTime * vel);
         }
             
     }
@@ -42,6 +51,14 @@ public class BF_CO_objectFollowY : BF_ChangeObject
     {
         base.ChangeObject();
 
+        following = true;
+    }
+
+    protected override void ResetObject()
+    {
+        base.ResetObject();
+
+        following = false;
     }
 
 

@@ -428,7 +428,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 0268c1a64fc9e8840a1c6f5d88e42374, type: 3}
-  m_Color: {r: 0.09066844, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -519,7 +519,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BF_CO_objectScale
   detector: {fileID: 450522878}
-  scaleTarget: {x: 1, y: 10, z: 1}
+  reset: 1
+  resetTime: 3
+  scaleMultTarget: {x: 1, y: 10}
   timeToTarget: 0.5
 --- !u!1 &301678804
 GameObject:
@@ -1170,6 +1172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BF_CO_objectFollowY
   detector: {fileID: 853681596}
+  reset: 0
+  resetTime: 5
   vel: 10
 --- !u!1 &511918202
 GameObject:
@@ -1220,6 +1224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BF_CO_changePosition
   detector: {fileID: 335147556}
+  reset: 0
+  resetTime: 0
   newPos: {x: -4, y: 0, z: 0}
 --- !u!212 &511918205
 SpriteRenderer:

@@ -3,14 +3,17 @@ using DG.Tweening;
 
 public class BF_CO_objectScale : BF_ChangeObject
 {
-    [SerializeField] Vector3 scaleTarget;
+    [SerializeField] Vector2 scaleMultTarget;
     [SerializeField] float timeToTarget;
+
     SpriteRenderer spriteRenderer;
+    Vector3 originalScale;
 
     protected override void Awake()
     {
         base.Awake();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        originalScale = transform.localScale;
     }
 
     protected override void Start()
@@ -32,10 +35,19 @@ public class BF_CO_objectScale : BF_ChangeObject
     {
         base.ChangeObject();
 
-        transform.DOScale(scaleTarget, timeToTarget);
+        transform.DOScale(Vector3.Scale(scaleMultTarget, transform.localScale), timeToTarget);
        
 
         //transform.localScale = new Vector3 (3,10,1);
-        spriteRenderer.color = Color.red;
+        //spriteRenderer.color = Color.red;
+    }
+
+    protected override void ResetObject()
+    {
+        base.ResetObject();
+
+        transform.DOScale(originalScale, timeToTarget);
+
+        Debug.Log("Resetou");
     }
 }

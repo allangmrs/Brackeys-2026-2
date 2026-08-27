@@ -1,16 +1,20 @@
 using UnityEngine;
 using DG.Tweening;
 using Unity.VisualScripting;
+using TreeEditor;
 
 public class BF_CO_changePosition : BF_ChangeObject
 {
 
     [SerializeField] Vector3 newPos;
+    Vector3 originalPos;
 
 
     protected override void Awake()
     {
         base.Awake();
+
+        originalPos = transform.position;
     }
 
     protected override void Start()
@@ -33,7 +37,21 @@ public class BF_CO_changePosition : BF_ChangeObject
     {
         base.ChangeObject();
 
-        transform.localPosition = newPos;
+        if (transform.position == originalPos)
+        {
+            transform.position = newPos;
+        }
+        else
+        {
+            transform.position = originalPos;
+        }
+        
+    }
+
+    protected override void ResetObject()
+    {
+        base.ResetObject();
+
     }
 
 

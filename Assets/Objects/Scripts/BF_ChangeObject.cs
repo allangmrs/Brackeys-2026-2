@@ -1,9 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 
 public class BF_ChangeObject : MonoBehaviour
 {
     [SerializeField] BF_DetectPlayer detector;
+
+    [SerializeField] bool reset = false;
+    [SerializeField] float resetTime;
+
     protected bool state = false;
 
 
@@ -26,6 +31,8 @@ public class BF_ChangeObject : MonoBehaviour
             ChangeObject();
 
             state = true;
+
+            StartCoroutine(CorReset());
         }
     }
 
@@ -34,9 +41,26 @@ public class BF_ChangeObject : MonoBehaviour
         
     }
 
-    protected virtual void ChangeObject ()
+    protected virtual void ChangeObject()
     {
         // Classes filhas vão dar override
+    }
+
+    protected virtual void ResetObject()
+    {
+        // Classes filhas vão dar override
+    }
+
+    IEnumerator CorReset()
+    {
+        yield return new WaitForSeconds(resetTime);
+
+        state = false;
+        detector.playerDetected = false;
+
+        Debug.Log("Tentou resetar");
+        ResetObject();
+        
     }
 
 }

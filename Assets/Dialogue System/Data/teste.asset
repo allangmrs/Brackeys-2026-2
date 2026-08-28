@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6e8993ed68f1c47b5bcfa27204605d, type: 3}
+  m_Name: teste
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueData
+  lines:
+  - FAAAAHHH!
+  - TESTANDO, EAI. PORRA!
+  - TESTANDO, EAI. PORRA! TESTANDO, EAI. PORRA! TESTANDO, EAI. PORRA! TESTANDO, EAI.
+    PORRA! TESTANDO, EAI. PORRA!
+  - TESTANDO, EAI. PORRA! TESTANDO, EAI. PORRA! TESTANDO, EAI. PORRA! TESTANDO, EAI.
+    PORRA! TESTANDO, EAI. PORRA!
+  - "\"N\xE3o toque no <color=red>bot\xE3o</color>.\""
+  - "\"<b>CUIDADO!</b> O ch\xE3o est\xE1 quebrado.\""
+  - "\"<b><color=yellow>ATEN\xC7\xC3O!</color></b> N\xE3o confie na fada.\""
+  - "\"<b>AVISO:</b> n\xE3o aperte o <color=red>bot\xE3o vermelho</color>.\""
+  - "\"<size=150%><b>\xC9 S\xC9RIO.</b></size>\""

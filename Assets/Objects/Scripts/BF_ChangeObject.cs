@@ -1,0 +1,67 @@
+using System.Collections;
+using UnityEngine;
+
+
+public class BF_ChangeObject : MonoBehaviour
+{
+    [SerializeField] BF_DetectPlayer detector;
+
+    [SerializeField] bool reset = false;
+    [SerializeField] float resetTime;
+
+    protected bool state = false;
+
+
+    protected virtual void Awake()
+    {
+        
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    protected virtual void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    protected virtual void Update()
+    {
+        if (detector.playerDetected && !state)
+        {
+            ChangeObject();
+
+            state = true;
+
+            if (reset)
+                StartCoroutine(CorReset());
+        }
+    }
+
+    protected virtual void FixedUpdate()
+    {
+        
+    }
+
+    protected virtual void ChangeObject()
+    {
+        // Classes filhas vão dar override
+    }
+
+    protected virtual void ResetObject()
+    {
+        // Classes filhas vão dar override
+    }
+
+    IEnumerator CorReset()
+    {
+        yield return new WaitForSeconds(resetTime);
+
+        state = false;
+        detector.playerDetected = false;
+
+        Debug.Log("Tentou resetar");
+        ResetObject();
+        
+    }
+
+}

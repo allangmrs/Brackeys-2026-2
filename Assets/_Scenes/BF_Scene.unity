@@ -707,9 +707,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BF_CO_objectScale
   detector: {fileID: 450522878}
   reset: 1
+  resetDetector: 1
   resetTime: 3
   scaleMultTarget: {x: 1, y: 10}
   timeToTarget: 0.5
+  startColliderDisabled: 0
 --- !u!1 &301678804
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BF_DetectPlayer
   playerDetected: 0
+  detectorEnabled: 1
 --- !u!61 &335147557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1156,6 +1159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BF_DetectPlayer
   playerDetected: 0
+  detectorEnabled: 0
 --- !u!61 &450522879
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1360,6 +1364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BF_CO_objectFollowY
   detector: {fileID: 853681596}
   reset: 0
+  resetDetector: 0
   resetTime: 5
   vel: 10
   eixoY: 1
@@ -1597,6 +1602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BF_CO_changePosition
   detector: {fileID: 335147556}
   reset: 0
+  resetDetector: 0
   resetTime: 0
   newPos: {x: -4, y: 0, z: 0}
 --- !u!212 &511918205
@@ -2047,6 +2053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BF_DetectPlayer
   playerDetected: 0
+  detectorEnabled: 1
 --- !u!61 &853681597
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2204,9 +2211,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BF_CO_objectScale
   detector: {fileID: 1430474985}
   reset: 1
+  resetDetector: 0
   resetTime: 3
   scaleMultTarget: {x: 1, y: 10}
   timeToTarget: 0.5
+  startColliderDisabled: 1
 --- !u!61 &1026200355
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3470,6 +3479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BF_DetectPlayer
   playerDetected: 0
+  detectorEnabled: 1
 --- !u!61 &1430474986
 BoxCollider2D:
   m_ObjectHideFlags: 0

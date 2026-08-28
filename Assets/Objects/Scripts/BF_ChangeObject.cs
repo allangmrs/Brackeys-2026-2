@@ -32,7 +32,8 @@ public class BF_ChangeObject : MonoBehaviour
 
             state = true;
 
-            StartCoroutine(CorReset());
+            if (reset)
+                StartCoroutine(CorReset());
         }
     }
 

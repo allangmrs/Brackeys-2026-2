@@ -3,9 +3,10 @@ using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 
-public class BF_CO_objectFollowY : BF_ChangeObject
+public class BF_CO_objectFollow : BF_ChangeObject
 {
     public float vel;
+    public bool eixoY = true;
 
     Transform player;
     Vector3 originalPos;
@@ -38,7 +39,10 @@ public class BF_CO_objectFollowY : BF_ChangeObject
 
         if (following)
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2 (transform.position.x, player.position.y), Time.deltaTime * vel);
+            if (eixoY)
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2 (transform.position.x, player.position.y), Time.deltaTime * vel);
+            else
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2 (player.position.x, transform.position.y), Time.deltaTime * vel);
         }
         else if (!following && transform.position != originalPos)
         {

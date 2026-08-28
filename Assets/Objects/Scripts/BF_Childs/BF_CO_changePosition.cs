@@ -51,7 +51,6 @@ public class BF_CO_changePosition : BF_ChangeObject
     protected override void ResetObject()
     {
         base.ResetObject();
-
     }
 
 

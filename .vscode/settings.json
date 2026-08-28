@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "DevU-ProjectTemplate.slnx",
+    "dotnet.defaultSolution": "Brackeys-2026-2.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }

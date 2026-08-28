@@ -62,6 +62,9 @@ namespace Player
 
         public void OnDash(InputAction.CallbackContext context)
         {
+            if (inputsDisabled || dashDisabled)
+                return;
+
             if (playerBehaviour.canDash & dashCooldownTimer <= Mathf.Epsilon & context.performed)
             {
                 dashCooldownTimer = playerBehaviourData.dashCooldown;

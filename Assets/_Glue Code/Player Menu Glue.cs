@@ -1,11 +1,13 @@
 using MenuSystem;
 using MobileControls;
+using Player;
 using UnityEngine;
 
 public class PlayerMenuGlue : MonoBehaviour
 {
     private PauseMenuController pauseMenuController;
     private PauseHandler pauseHandler;
+    private bool isPaused = false;
 
     private void Start()
     {
@@ -15,16 +17,20 @@ public class PlayerMenuGlue : MonoBehaviour
 
     private void OnEnable()
     {
-        Player.InputHandler.OnPausePressed += TogglePause;
+        InputHandler.OnPausePressed += TogglePause;
+        PauseMenuController.OnReturnToMenu += TogglePause;
     }
     private void OnDisable()
     {
-        Player.InputHandler.OnPausePressed -= TogglePause;
+        InputHandler.OnPausePressed -= TogglePause;
+        PauseMenuController.OnReturnToMenu -= TogglePause;
     }
 
-    public void TogglePause(bool activate)
+    public void TogglePause()
     {
-        pauseMenuController.TogglePause(activate);
-        pauseHandler.TogglePause(activate);
+        isPaused = !isPaused;
+        pauseMenuController.TogglePause(isPaused);
+        pauseHandler.TogglePause(isPaused);
     }
+
 }

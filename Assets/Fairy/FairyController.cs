@@ -41,11 +41,13 @@ namespace Fairy
 
         private void LateUpdate()
         {
-            if (!isFollowing) return;
+            if (isFollowing)
+            {
+                FollowPlayer();
+                UpdateFacingDirection();
+            }
 
-            FollowPlayer();
-            UpdateFacingDirection();
-            //UpdateDirection();
+            UpdateMovementVelocity();
             UpdateFloating();
             UpdateTilt();
         }

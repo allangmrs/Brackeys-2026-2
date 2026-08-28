@@ -17,9 +17,9 @@ public class BF_MovingPlatform : MonoBehaviour
     {
         Vector3 target = waypoints[targetIndex];
 
-        float direction = Mathf.Sign(target.x - transform.position.x);
+        Vector2 direction = target - transform.position;
         
-        rb.linearVelocityX = direction*speed;
+        rb.linearVelocity = direction.normalized*speed;
 
 
         if (Vector2.Distance(transform.position, target) < 0.1f)

@@ -28,6 +28,7 @@ namespace DialogueSystem
         private bool isTyping;
 
         public bool IsActive { get; private set; }
+        private Action onDialogueFinished;
 
         private void Awake()
         {
@@ -41,16 +42,17 @@ namespace DialogueSystem
             DontDestroyOnLoad(gameObject);
         }
 
-        public void StartDialogue(DialogueData dialogue)
+        public void StartDialogue(DialogueData dialogue, Action onFinished = null)
         {
             if (dialogue == null || dialogue.Lines.Count == 0)
             {
                 return;
             }
-
             currentDialogue = dialogue;
             currentLine = 0;
             IsActive = true;
+
+            onDialogueFinished = onFinished;
 
             dialogueUI.SetActive(true);
 
@@ -142,11 +144,16 @@ namespace DialogueSystem
         {
             IsActive = false;
             currentDialogue = null;
+            dialogueUI.SetActive(false);
+            onDialogueFinished?.Invoke();
+            onDialogueFinished = null;
+
             if (cameraController != null)
             {
                 cameraController.ResetCamera();
             }
-            dialogueUI.SetActive(false);
+            
+
         }
     }
 }

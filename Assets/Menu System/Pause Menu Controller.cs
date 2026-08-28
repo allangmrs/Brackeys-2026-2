@@ -58,6 +58,7 @@ namespace MenuSystem
         public void ReturnToMenu()
         {
             Debug.Log("Voltou pro menu inicial!");
+            TogglePause(false);
         }
 
         public void OpenPauseSection() { pauseSection.Activate(null); }

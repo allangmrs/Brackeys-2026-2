@@ -7,7 +7,7 @@ namespace DialogueSystem
     {
         [SerializeField] private Camera mainCamera;
 
-        [SerializeField] private float dialogueZoom = 4f;
+        [SerializeField] private float dialogueZoom = 40f;
         [SerializeField] private float transitionDuration = 0.3f;
         [SerializeField] private Vector2 framingOffset;
 
@@ -17,7 +17,7 @@ namespace DialogueSystem
         private void Awake()
         {
             originalPosition = mainCamera.transform.position;
-            originalZoom = mainCamera.orthographicSize;
+            originalZoom = mainCamera.fieldOfView;
         }
 
         public void FocusBetween(Transform obj1, Transform obj2)
@@ -37,7 +37,7 @@ namespace DialogueSystem
                 .SetEase(Ease.OutQuad);
 
             mainCamera
-                .DOOrthoSize(dialogueZoom, transitionDuration)
+                .DOFieldOfView(dialogueZoom, transitionDuration)
                 .SetEase(Ease.OutQuad);
         }
 
@@ -48,7 +48,7 @@ namespace DialogueSystem
                 .SetEase(Ease.OutQuad);
 
             mainCamera
-                .DOOrthoSize(originalZoom, transitionDuration)
+                .DOFieldOfView(originalZoom, transitionDuration)
                 .SetEase(Ease.OutQuad);
         }
     }

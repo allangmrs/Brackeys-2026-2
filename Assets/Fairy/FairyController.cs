@@ -1,13 +1,15 @@
 using DG.Tweening;
 using UnityEngine;
 using System.Collections;
+using Player;
 
 namespace Fairy
 {
     public class FairyController : MonoBehaviour
     {
-        [SerializeField] private Transform player;
-        [SerializeField] private Vector2 followOffset = new Vector2(1.5f, 1f);
+        [SerializeField] private Transform playerVisual;
+        [SerializeField] private Transform followPoint;
+        [SerializeField] private Vector2 followOffset = new Vector2(0f, 1f);
 
         [SerializeField] private float followSmoothTime = 0.2f;
         [SerializeField] private float flipSpeed = 8f;
@@ -23,6 +25,7 @@ namespace Fairy
         [Header("Tilt")]
         [SerializeField] private float maxTilt = 10f;
         [SerializeField] private float tiltSpeed = 5f;
+
 
         private Vector3 visualStartPosition;
         private Vector3 velocity;
@@ -41,14 +44,23 @@ namespace Fairy
             if (!isFollowing) return;
 
             FollowPlayer();
-            UpdateDirection();
+            UpdateFacingDirection();
+            //UpdateDirection();
             UpdateFloating();
             UpdateTilt();
         }
 
         private void FollowPlayer()
         {
-            Vector3 targetPosition = player.position + (Vector3)followOffset;
+            float direction = playerVisual.localScale.x > 0 ? 1f : -1f;
+
+            Vector3 offset = new Vector3(
+                followOffset.x * direction,
+                followOffset.y,
+                0f
+            );
+
+            Vector3 targetPosition = followPoint.position + offset;
 
             transform.position = Vector3.SmoothDamp(
                 transform.position,
@@ -61,12 +73,19 @@ namespace Fairy
         private void UpdateDirection()
         {
             float direction =
-                player.position.x - transform.position.x;
+                playerVisual.position.x - transform.position.x;
 
             if (Mathf.Abs(direction) < 0.01f)
                 return;
 
             SetFacingDirection(direction > 0);
+        }
+
+        private void UpdateFacingDirection()
+        {
+            bool playerFacingRight = playerVisual.localScale.x > 0;
+
+            SetFacingDirection(playerFacingRight);
         }
 
         public IEnumerator GoToPoint(FairyDialoguePoint point)
@@ -97,8 +116,7 @@ namespace Fairy
 
         private void UpdateFloating()
         {
-            float offsetY = Mathf.Sin(Time.time * floatSpeedY) * floatAmplitudeY;
-
+            float offsetY = Mathf.Sin(2f* Time.time * floatSpeedY) * floatAmplitudeY;
             float offsetX = Mathf.Sin(Time.time * floatSpeedX) * floatAmplitudeX;
 
             visual.localPosition = visualStartPosition + new Vector3(offsetX, offsetY, 0f);

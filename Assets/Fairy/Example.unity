@@ -453,7 +453,7 @@ GameObject:
   m_Layer: 0
   m_Name: FairyPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -466,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 1530757171}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.84, y: 0.61, z: 0}
+  m_LocalPosition: {x: -0.902, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -654,8 +654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 717145a588c5d034bafa2ee48c2c8d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fairy.FairyController
-  player: {fileID: 1530757172}
-  followOffset: {x: 1.5, y: 1}
+  playerVisual: {fileID: 1442102511}
+  followPoint: {fileID: 1530757172}
+  followOffset: {x: -0.5, y: 1}
   followSmoothTime: 0.2
   flipSpeed: 8
   visual: {fileID: 821364783}

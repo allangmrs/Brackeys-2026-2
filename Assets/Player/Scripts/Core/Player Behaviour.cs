@@ -41,6 +41,16 @@ namespace Player
             canJump = true;
             canDash = true;
         }
+        // Gravidade
+        private void SetGravity(float gravity)
+        {
+            rb.gravityScale = gravity;
+        }
+        // nesse caso seria só alterar com:
+       // SetGravity(0.2f); // baixa
+       // SetGravity(3f);   // alta
+       // no caso esse codigo seria colocado na fadinha pra alterar por ela ou o trigger que quiser
+
 
         private void Update()
         {
@@ -66,19 +76,24 @@ namespace Player
             if (canMove)
                 rb.linearVelocityX = moveDirection * playerBehaviourData.moveSpeed;
         }
-
+        //CHAMAR I CONTROL INVERTED PRA INVERTER DIREÇÂO!!! AHHHHHHH
+        private bool controlsInverted = false;
         public void Move(int moveDirection)
-        {
-            this.moveDirection = moveDirection;
+{
 
-            if (moveDirection != 0)
-            {
-                if (moveDirection != lastMoveDirection)
-                    spriteController.Flip();
+    if (controlsInverted)
+        moveDirection *= -1;
 
-                lastMoveDirection = moveDirection;
-            }
-        }
+    this.moveDirection = moveDirection;
+
+    if (moveDirection != 0)
+    {
+        if (moveDirection != lastMoveDirection)
+            spriteController.Flip();
+
+        lastMoveDirection = moveDirection;
+    }
+}
 
         public void BufferJump()
         {

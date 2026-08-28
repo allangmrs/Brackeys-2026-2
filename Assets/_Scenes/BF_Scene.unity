@@ -3790,7 +3790,7 @@ MonoBehaviour:
   resetDetector: 1
   resetTime: 2
   projectilePrefab: {fileID: 8024944053927727587, guid: ef19edbd553bdf94ca07b2d3215a5d31, type: 3}
-  velProj: 30
+  velProj: 50
   timeDestroy: 10
   hasFixedDirection: 1
   directionX: 1

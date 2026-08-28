@@ -1575,7 +1575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &511918203
 Transform:
   m_ObjectHideFlags: 0
@@ -2484,7 +2484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1126257137
 Transform:
   m_ObjectHideFlags: 0
@@ -2733,7 +2733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1287839512
 Transform:
   m_ObjectHideFlags: 0
@@ -3788,7 +3788,7 @@ MonoBehaviour:
   detector: {fileID: 1985813295}
   reset: 1
   resetDetector: 1
-  resetTime: 2
+  resetTime: 1
   projectilePrefab: {fileID: 8024944053927727587, guid: ef19edbd553bdf94ca07b2d3215a5d31, type: 3}
   velProj: 50
   timeDestroy: 10

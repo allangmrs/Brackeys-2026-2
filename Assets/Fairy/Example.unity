@@ -281,10 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4296350274940427834, guid: e3d836d029059e545a94c07f9c63b88e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1530757172}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3d836d029059e545a94c07f9c63b88e, type: 3}
 --- !u!1 &485825671
@@ -1134,27 +1131,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4296350274940427834, guid: e3d836d029059e545a94c07f9c63b88e, type: 3}
   m_PrefabInstance: {fileID: 222757516}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1530757171
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1530757172}
-  m_Layer: 0
-  m_Name: FairyPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1530757172
+--- !u!4 &1530757172 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6839104953649626728, guid: e3d836d029059e545a94c07f9c63b88e, type: 3}
+  m_PrefabInstance: {fileID: 222757516}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1530757171}
   serializedVersion: 2
@@ -1389,28 +1369,15 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1944638529
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8739775106030068628, guid: ac7acec18817cf14d8d43d77d19bbaa4, type: 3}
+  m_PrefabInstance: {fileID: 8862431659384731926}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944638527}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 717145a588c5d034bafa2ee48c2c8d7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fairy.FairyController
-  playerVisual: {fileID: 1442102511}
-  followPoint: {fileID: 1530757172}
-  followOffset: {x: -0.5, y: 1}
-  followSmoothTime: 0.2
-  flipSpeed: 8
-  visual: {fileID: 821364783}
-  floatAmplitudeY: 0.1
-  floatSpeedY: 3
-  floatAmplitudeX: 0.05
-  floatSpeedX: 2
-  maxTilt: 10
-  tiltSpeed: 5
 --- !u!1 &2118632410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1602,7 @@ SceneRoots:
   - {fileID: 1944638528}
   - {fileID: 222757516}
   - {fileID: 856445533}
-  - {fileID: 732521345}
+  - {fileID: 6047729091699731907}
   - {fileID: 2118632414}
   - {fileID: 826492750}
   - {fileID: 8830538921135111320}

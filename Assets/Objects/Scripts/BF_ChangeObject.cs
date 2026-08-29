@@ -7,6 +7,7 @@ public class BF_ChangeObject : MonoBehaviour
     [SerializeField] BF_DetectPlayer detector;
 
     [SerializeField] bool reset = false;
+    [SerializeField] bool resetDetector = false;
     [SerializeField] float resetTime;
 
     protected bool state = false;
@@ -56,10 +57,14 @@ public class BF_ChangeObject : MonoBehaviour
     {
         yield return new WaitForSeconds(resetTime);
 
+        if (!resetDetector)
+            detector.detectorEnabled = false;
+
         state = false;
         detector.playerDetected = false;
 
-        Debug.Log("Tentou resetar");
+        
+
         ResetObject();
         
     }

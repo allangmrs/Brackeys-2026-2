@@ -32,11 +32,14 @@ namespace Fairy
         private bool isFollowing = true;
         private Vector3 previousPosition;
         private Vector3 movementVelocity;
+        private Vector3 originalScale;
 
         private void Awake()
         {
             visualStartPosition = visual.localPosition;
             previousPosition = transform.position;
+            originalScale = visual.localScale;
+            Debug.Log(originalScale);
         }
 
         private void LateUpdate()
@@ -54,7 +57,9 @@ namespace Fairy
 
         private void FollowPlayer()
         {
-            float direction = playerVisual.localScale.x > 0 ? 1f : -1f;
+            //float direction = playerVisual.localScale.x > 0 ? 1f : -1f;
+            float direction = playerVisual.localScale.x > 0 ? originalScale.x*1f : originalScale.x*-1f;
+
 
             Vector3 offset = new Vector3(
                 followOffset.x * direction,
@@ -113,7 +118,7 @@ namespace Fairy
 
         private void SetFacingDirection(bool faceRight)
         {
-            visual.localScale = new Vector3(!faceRight ? -1 : 1, 1, 1);
+            visual.localScale = new Vector3(!faceRight ? -1*originalScale.x : originalScale.x, originalScale.y, originalScale.z);
         }
 
         private void UpdateFloating()
@@ -140,10 +145,15 @@ namespace Fairy
 
         private void UpdateMovementVelocity()
         {
-            movementVelocity =
-                (transform.position - previousPosition) / Time.deltaTime;
-
-            previousPosition = transform.position;
+            if (Time.deltaTime > 0f)
+            {
+                movementVelocity = (transform.position - previousPosition) / Time.deltaTime;
+                previousPosition = transform.position;
+            }
+            else
+            {
+                movementVelocity = Vector3.zero;
+            }
         }
     }
 }

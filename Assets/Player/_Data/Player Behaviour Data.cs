@@ -26,5 +26,8 @@ namespace Player
 
         [Header("Death")]
         public string[] hostileTags;
+
+        [Header("Knockback")]
+        public float knockbackTime = 1f;
     }
 }

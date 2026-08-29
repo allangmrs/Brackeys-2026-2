@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 namespace Player
@@ -196,6 +197,22 @@ namespace Player
             {
                 activePlatformRb = null;
             }
+        }
+
+        public void ApplyKnockback(float force, Vector3 direction)
+        {
+            canMove = false;
+
+            rb.AddForce(rb.mass*force*direction, ForceMode2D.Impulse);
+
+            StartCoroutine(TimerKnockback());
+        }
+
+        IEnumerator TimerKnockback()
+        {
+            yield return new WaitForSeconds(playerBehaviourData.knockbackTime);
+
+            canMove = true;
         }
     }
 }

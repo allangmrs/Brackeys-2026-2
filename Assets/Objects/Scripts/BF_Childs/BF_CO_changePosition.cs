@@ -6,7 +6,7 @@ using TreeEditor;
 public class BF_CO_changePosition : BF_ChangeObject
 {
 
-    [SerializeField] Vector3 newPos;
+    [SerializeField] Transform newPos;
     Vector3 originalPos;
 
 
@@ -39,7 +39,7 @@ public class BF_CO_changePosition : BF_ChangeObject
 
         if (transform.position == originalPos)
         {
-            transform.position = newPos;
+            transform.position = new Vector3(newPos.position.x, newPos.position.y, newPos.position.z);
         }
         else
         {

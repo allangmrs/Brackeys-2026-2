@@ -36,7 +36,7 @@ namespace Player
 
 
         //CHAMAR I CONTROL INVERTED PRA INVERTER DIREÇÂO!!! AHHHHHHH
-        private bool controlsInverted = false;
+        public bool controlsInverted = false;
 
         private void Awake()
         {
@@ -47,7 +47,7 @@ namespace Player
             canDash = true;
         }
         // Gravidade
-        private void SetGravity(float gravity)
+        public void SetGravity(float gravity)
         {
             rb.gravityScale = gravity;
         }

@@ -58,7 +58,7 @@ public class BF_CO_objectFollow : BF_ChangeObject
         following = true;
     }
 
-    protected override void ResetObject()
+    public override void ResetObject()
     {
         base.ResetObject();
 

@@ -66,6 +66,20 @@ namespace Player
 
             StartCoroutine(DeathEffectsRoutine(collisionDirection, onFinish));
         }
+
+        public void PlaySpawnEffects()
+        {
+            spriteController.TriggerSpawnAnimation();
+            //audioController.PlaySpawnSFX();
+
+            playerRb.simulated = true;
+
+
+            StartCoroutine(SpawnEffectsRoutine());
+        }
+
+
+
         private IEnumerator DeathEffectsRoutine(Vector3 collisionDirection, Action onFinish)
         {
             //Pisca o sprite
@@ -97,6 +111,43 @@ namespace Player
             deathParticles.ApplyEffect();
 
             onFinish?.Invoke();
+        }
+
+        private IEnumerator SpawnEffectsRoutine()
+        {
+            // Ativa o sprite
+            spriteController.EnableSprite();
+
+            //Pisca o sprite
+            spriteFlash.ApplyEffect(playerSr);
+
+            //Treme a câmera
+            //deathCameraShake.ApplyEffect();
+
+            //Aplica tremor do controle
+            //if (inputHandler.isOnController)
+                //controllerRumble.ApplyEffect();
+
+            //Faz o animator ser scaledTime
+            spriteController.SetScaledTime();
+
+            // Desativa time slow
+            deathTimeSlow.DisableEffect();
+
+            //Aplica knockback
+            //deathKnockback.ApplyEffect(-collisionDirection);
+
+            //Espera o knockback acabar
+            //yield return new WaitUntil(() => deathKnockback.finished == true);
+
+            
+
+            //Ivoca as partículas de morte
+            //deathParticles.ApplyEffect();
+
+            //onFinish?.Invoke();
+
+            yield return null;
         }
     }
 }

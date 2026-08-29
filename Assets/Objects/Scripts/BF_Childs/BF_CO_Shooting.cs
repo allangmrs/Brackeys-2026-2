@@ -63,7 +63,7 @@ public class BF_CO_Shooting : BF_ChangeObject
 
     }
 
-    protected override void ResetObject()
+    public override void ResetObject()
     {
         base.ResetObject();
     }

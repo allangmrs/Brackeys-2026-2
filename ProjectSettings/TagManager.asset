@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - EnemyCollider
   - MovingPlatform
+  - BombTarget
   layers:
   - Default
   - TransparentFX

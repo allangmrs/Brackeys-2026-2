@@ -31,7 +31,6 @@ namespace CameraSystem
 
         public void SetScreen(Transform cameraPoint)
         {
-
             if (cameraPoint == null || followPoint == null)
             {
                 return;

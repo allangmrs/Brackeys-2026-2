@@ -50,8 +50,7 @@ namespace Player
         {
             OnPlayerDeathCompleted?.Invoke();
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   // Para testar melhor
-
+            col.enabled = true;
         }
     }
 }

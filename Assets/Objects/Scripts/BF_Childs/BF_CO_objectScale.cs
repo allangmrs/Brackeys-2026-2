@@ -56,7 +56,7 @@ public class BF_CO_objectScale : BF_ChangeObject
         //spriteRenderer.color = Color.red;
     }
 
-    protected override void ResetObject()
+    public override void ResetObject()
     {
         base.ResetObject();
 

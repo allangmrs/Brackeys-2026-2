@@ -33,8 +33,7 @@ public class BF_ChangeObject : MonoBehaviour
 
             state = true;
 
-            if (reset)
-                StartCoroutine(CorReset());
+            
         }
     }
 
@@ -45,11 +44,18 @@ public class BF_ChangeObject : MonoBehaviour
 
     protected virtual void ChangeObject()
     {
+        if (reset)
+            StartCoroutine(CorReset());
+
         // Classes filhas vão dar override
     }
 
-    protected virtual void ResetObject()
+    public virtual void ResetObject()
     {
+    
+        state = false;
+        detector.playerDetected = false;
+
         // Classes filhas vão dar override
     }
 
@@ -60,13 +66,7 @@ public class BF_ChangeObject : MonoBehaviour
         if (!resetDetector)
             detector.detectorEnabled = false;
 
-        state = false;
-        detector.playerDetected = false;
-
-        
-
         ResetObject();
-        
     }
 
 }

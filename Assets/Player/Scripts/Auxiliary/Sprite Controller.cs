@@ -36,12 +36,27 @@ namespace Player
             animator.SetTrigger("hasDied");
         }
 
+        public void TriggerSpawnAnimation()
+        {
+            animator.SetTrigger("hasSpawned");
+        }
+
         public void DisableSprite()
         {
             sr.enabled = false;
         }
 
+        public void EnableSprite()
+        {
+            sr.enabled = true;
+        }
+
         public void SetUnscaledTime()
+        {
+            animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        }
+
+        public void SetScaledTime()
         {
             animator.updateMode = AnimatorUpdateMode.UnscaledTime;
         }

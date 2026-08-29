@@ -25,3 +25,4 @@ MonoBehaviour:
   dashDuration: 0.2
   hostileTags:
   - Obstacle
+  - EnemyCollider

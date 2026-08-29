@@ -7,6 +7,9 @@ TagManager:
   - MusicSource
   - CameraConfiner
   - Obstacle
+  - EnemyCollider
+  - MovingPlatform
+  - BombTarget
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 

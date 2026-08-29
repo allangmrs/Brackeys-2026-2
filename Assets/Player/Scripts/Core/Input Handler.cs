@@ -21,7 +21,7 @@ namespace Player
         public bool isPaused;
         public bool isOnController;
 
-        public static event Action<bool> OnPausePressed;
+        public static event Action OnPausePressed;
 
         private void Update()
         {
@@ -62,6 +62,9 @@ namespace Player
 
         public void OnDash(InputAction.CallbackContext context)
         {
+            if (inputsDisabled || dashDisabled)
+                return;
+
             if (playerBehaviour.canDash & dashCooldownTimer <= Mathf.Epsilon & context.performed)
             {
                 dashCooldownTimer = playerBehaviourData.dashCooldown;
@@ -76,20 +79,19 @@ namespace Player
 
             if (context.performed)
             {
-                if (isPaused)
-                {
-                    inputsDisabled = false;
-                    isPaused = false;
-                }
-                else
-                {
-                    inputsDisabled = true;
-                    isPaused = true;
+                //if (isPaused)
+                //{
+                //    //inputsDisabled = false;
+                //    isPaused = false;
+                //}
+                //else
+                //{
+                //    //inputsDisabled = true;
+                //    isPaused = true;
+                //}
+                playerBehaviour.Move(0);
 
-                    playerBehaviour.Move(0);
-                }
-
-                OnPausePressed?.Invoke(isPaused);
+                OnPausePressed?.Invoke();
             }
         }
 

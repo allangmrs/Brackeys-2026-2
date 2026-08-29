@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 namespace Player
@@ -26,12 +27,17 @@ namespace Player
         [SerializeField] private Vector2 groundCheckBoxSize;
         [SerializeField] private LayerMask groundLayerMask;
         private bool isGrounded;
+        private Rigidbody2D activePlatformRb;
 
         [Header("Booleans")]
         public bool canMove;
         public bool canJump;
         public bool canDash;
         public bool isDashing;
+
+
+        //CHAMAR I CONTROL INVERTED PRA INVERTER DIREÇÂO!!! AHHHHHHH
+        public bool controlsInverted = false;
 
         private void Awake()
         {
@@ -41,6 +47,16 @@ namespace Player
             canJump = true;
             canDash = true;
         }
+        // Gravidade
+        public void SetGravity(float gravity)
+        {
+            rb.gravityScale = gravity;
+        }
+        // nesse caso seria só alterar com:
+       // SetGravity(0.2f); // baixa
+       // SetGravity(3f);   // alta
+       // no caso esse codigo seria colocado na fadinha pra alterar por ela ou o trigger que quiser
+
 
         private void Update()
         {
@@ -65,10 +81,16 @@ namespace Player
         {
             if (canMove)
                 rb.linearVelocityX = moveDirection * playerBehaviourData.moveSpeed;
+
+            PlatformVelEffect();
         }
 
         public void Move(int moveDirection)
         {
+
+            if (controlsInverted)
+                moveDirection *= -1;
+
             this.moveDirection = moveDirection;
 
             if (moveDirection != 0)
@@ -137,6 +159,60 @@ namespace Player
             isDashing = false;
 
             effectsController.ToggleDashEffects(false);
+        }
+
+        void PlatformVelEffect()
+        {
+            float targetWalkVelocity = rb.linearVelocityX;
+
+            if (activePlatformRb != null)
+            {
+                targetWalkVelocity += activePlatformRb.linearVelocity.x;
+                
+                if (Mathf.Abs(rb.linearVelocity.y - activePlatformRb.linearVelocity.y) < 0.1f)
+                {
+                    rb.linearVelocity = new Vector2(targetWalkVelocity, activePlatformRb.linearVelocity.y);
+                    return;
+                }
+
+                Debug.Log(activePlatformRb.linearVelocity.x);
+            }
+
+            rb.linearVelocity = new Vector2(targetWalkVelocity, rb.linearVelocity.y);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.gameObject.CompareTag("MovingPlatform"))
+            {
+                Debug.Log("Subiu em plataforma");
+                activePlatformRb = collision.gameObject.GetComponentInParent<Rigidbody2D>();
+            }
+        }
+
+        // Detect platform exit
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.gameObject.GetComponentInParent<Rigidbody2D>() == activePlatformRb)
+            {
+                activePlatformRb = null;
+            }
+        }
+
+        public void ApplyKnockback(float force, Vector3 direction)
+        {
+            canMove = false;
+
+            rb.AddForce(rb.mass*force*direction, ForceMode2D.Impulse);
+
+            StartCoroutine(TimerKnockback());
+        }
+
+        IEnumerator TimerKnockback()
+        {
+            yield return new WaitForSeconds(playerBehaviourData.knockbackTime);
+
+            canMove = true;
         }
     }
 }

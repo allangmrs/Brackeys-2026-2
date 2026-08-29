@@ -470,6 +470,7 @@ Transform:
   - {fileID: 7677733010923705594}
   - {fileID: 581810230661160104}
   - {fileID: 4854158223161766070}
+  - {fileID: 6839104953649626728}
   m_Father: {fileID: 1998061051895341009}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4754574023206982334
@@ -1371,6 +1372,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.Effects.AfterImagesManager
   playerEffectsData: {fileID: 11400000, guid: caeb9832678bac04e8ea2560f21c60a5, type: 2}
   afterImagePrefab: {fileID: 5103739235917968460, guid: e17e64ca2174d1c4080246f1e9169734, type: 3}
+--- !u!1 &8987748593115981347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6839104953649626728}
+  m_Layer: 0
+  m_Name: FairyPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6839104953649626728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987748593115981347}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.902, y: 0.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4296350274940427834}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9040897005127854941
 GameObject:
   m_ObjectHideFlags: 0

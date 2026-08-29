@@ -1,3 +1,4 @@
+using TransitionSystem;
 using UnityEngine;
 
 namespace MenuSystem
@@ -13,6 +14,7 @@ namespace MenuSystem
         public void StartNewGame()
         {
             Debug.Log("Começando novo jogo!");
+            TransitionManager.Instance.LoadScene(SceneName.GameScene);
         }
 
         public void ExitGame()

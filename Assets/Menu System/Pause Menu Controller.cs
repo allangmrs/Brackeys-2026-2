@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ namespace MenuSystem
     public class PauseMenuController : MonoBehaviour
     {
         public static PauseMenuController Instance;
+
+        public static event Action OnReturnToMenu;
 
         [Header("Sections")]
         [SerializeField] private BaseSection pauseSection;

@@ -56,7 +56,7 @@ public class BF_CO_Shooting : BF_ChangeObject
             direction = new Vector2(directionX, directionY);
         }
 
-        GameObject newProj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        GameObject newProj = Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         newProj.GetComponent<Rigidbody2D>().linearVelocity = direction*velProj;
 
         Destroy(newProj, timeDestroy);

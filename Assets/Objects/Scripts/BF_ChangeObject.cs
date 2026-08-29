@@ -7,6 +7,7 @@ public class BF_ChangeObject : MonoBehaviour
     [SerializeField] BF_DetectPlayer detector;
 
     [SerializeField] bool reset = false;
+    [SerializeField] bool resetDetector = false;
     [SerializeField] float resetTime;
 
     protected bool state = false;
@@ -32,8 +33,7 @@ public class BF_ChangeObject : MonoBehaviour
 
             state = true;
 
-            if (reset)
-                StartCoroutine(CorReset());
+            
         }
     }
 
@@ -44,11 +44,18 @@ public class BF_ChangeObject : MonoBehaviour
 
     protected virtual void ChangeObject()
     {
+        if (reset)
+            StartCoroutine(CorReset());
+
         // Classes filhas vão dar override
     }
 
-    protected virtual void ResetObject()
+    public virtual void ResetObject()
     {
+    
+        state = false;
+        detector.playerDetected = false;
+
         // Classes filhas vão dar override
     }
 
@@ -56,12 +63,10 @@ public class BF_ChangeObject : MonoBehaviour
     {
         yield return new WaitForSeconds(resetTime);
 
-        state = false;
-        detector.playerDetected = false;
+        if (!resetDetector)
+            detector.detectorEnabled = false;
 
-        Debug.Log("Tentou resetar");
         ResetObject();
-        
     }
 
 }

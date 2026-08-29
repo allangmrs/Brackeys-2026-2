@@ -12,6 +12,11 @@ namespace Player.Effects
             StartCoroutine(Routine());
         }
 
+        public void DisableEffect()
+        {
+            Time.timeScale = 1;
+        }
+
         private IEnumerator Routine()
         {
             float elapsedTime = 0;
@@ -33,7 +38,7 @@ namespace Player.Effects
 
         private void OnDisable()
         {
-            Time.timeScale = 1;
+            DisableEffect();
         }
     }
 }

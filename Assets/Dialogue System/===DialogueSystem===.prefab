@@ -66,9 +66,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c99abf078b95b74e99a4ec8284db7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueCameraController
-  mainCamera: {fileID: 0}
-  dialogueZoom: 4
-  transitionDuration: 0.3
   framingOffset: {x: 0, y: 0}
 --- !u!1 &4738090826862213456
 GameObject:

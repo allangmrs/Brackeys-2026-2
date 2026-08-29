@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Device;
 
 namespace CameraSystem
 {
@@ -14,6 +15,7 @@ namespace CameraSystem
         [SerializeField] private CinemachineCamera currentCamera;
         [SerializeField] private Transform followPoint;
 
+        private ScreenCameraZone currentScreen;
         private Tween transitionTween;
 
         private void Awake()
@@ -29,17 +31,46 @@ namespace CameraSystem
             followPoint = currentCamera.Follow;
         }
 
-        public void SetScreen(Transform cameraPoint)
+        public void SetScreen(ScreenCameraZone screen)
         {
-            if (cameraPoint == null || followPoint == null)
+            if (screen == null || followPoint == null)
             {
                 return;
             }
 
+            currentScreen = screen;
+            MoveTo(screen.CameraPoint.position);
+        }
+
+        public void FocusBetween(Transform obj1, Transform obj2, Vector2 offset)
+        {
+            if (obj1 == null || obj2 == null || followPoint == null)
+            {
+                return;
+            }
+
+            Vector3 midpoint = (obj1.position + obj2.position) / 2f;
+            midpoint += (Vector3)offset;
+
+            MoveTo(midpoint);
+        }
+
+        public void ResetToScreen()
+        {
+            if (currentScreen == null)
+                return;
+
+            MoveTo(currentScreen.CameraPoint.position);
+        }
+
+        private void MoveTo(Vector3 position)
+        {
             transitionTween?.Kill();
 
+            position.z = followPoint.position.z;
+
             transitionTween = followPoint
-                .DOMove(cameraPoint.position, transitionTime)
+                .DOMove(position, transitionTime)
                 .SetEase(transitionEase);
         }
     }

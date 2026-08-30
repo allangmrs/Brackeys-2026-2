@@ -89,6 +89,7 @@ namespace Player
                 //    //inputsDisabled = true;
                 //    isPaused = true;
                 //}
+                Debug.Log("Pause Pressed");
                 playerBehaviour.Move(0);
 
                 OnPausePressed?.Invoke();

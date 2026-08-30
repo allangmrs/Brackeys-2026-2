@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6e8993ed68f1c47b5bcfa27204605d, type: 3}
+  m_Name: ultimaHard
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueData
+  lines:
+  - <size=115%><b>Hey!</b></size>
+  - You're getting really close now.
+  - Just a few more rooms and this will all be over.
+  - And...
+  - I heard there's a reward waiting for you at the end.
+  - <color=#FFB6C1><size=135%><b>A CAKE!</b></size></color>
+  - <color=#FFB6C1><b>A really good one, too.</b></color>
+  - ... <color=#AAAAAA><size=80%><i>Probably.</i></size></color> ...
+  - <color=#AAAAAA><size=80%><i>I mean, that's what I was told.</i></size></color>
+  - Anyway!
+  - <size=110%><b>Keep going!</b></size>
+  - You've come <i>way</i> too far to stop now.

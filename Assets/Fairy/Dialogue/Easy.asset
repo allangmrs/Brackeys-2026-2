@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6e8993ed68f1c47b5bcfa27204605d, type: 3}
+  m_Name: Easy
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueData
+  lines:
+  - See?
+  - This one was easy!
+  - No traps, no spikes, no horrible surprises.
+  - <color=#AAAAAA><size=85%>For once.
+  - You deserve a little break before the end.
+  - And hey... the cake is just ahead!
+  - <color=#FFB6C1>A real cake.</color>
+  - <color=#FFB6C1><b>A COMPLETELY real cake.</b></color>
+  - <color=#FFB6C1><size=125%><b>A cake that <u>ABSOLUTELY</u> exists.</b></size></color>
+  - <color=#FFB6C1><size=140%><b>DEFINITELY.</b></size></color>
+  - ...
+  - <color=#AAAAAA><size=75%><i>Please stop looking at me like that.</i></size></color>
+  - <color=#AAAAAA><size=80%>Why wouldn't it?
+  - So don't overthink it.
+  - Just keep going.
+  - Trust me.

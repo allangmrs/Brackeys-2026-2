@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace AudioSystem
@@ -11,6 +12,8 @@ namespace AudioSystem
         [SerializeField] private AudioSource musicSource;
         [SerializeField] private AudioSource sfxSource;
 
+        [SerializeField] public AudioClip[] clips;
+
         private void Awake()
         {
             if (Instance == null)
@@ -20,6 +23,16 @@ namespace AudioSystem
             }
             else
                 Destroy(gameObject);
+        }
+
+        public void OnEnable()
+        {
+            AudioController.OnSoundPlayed += PlaySFX;
+        }
+
+        public void OnDisable()
+        {
+            AudioController.OnSoundPlayed -= PlaySFX;
         }
 
         public void PlayMenuMusic()

@@ -1,3 +1,4 @@
+using AudioSystem;
 using Player;
 using UnityEngine;
 
@@ -6,7 +7,8 @@ public class BF_PlayerKnockback : MonoBehaviour
     [SerializeField] float force;
 
     [SerializeField] bool hasFixedDirection;
-    [SerializeField] float fixedDirection = -1;  // -1 == esquerda, 1 == direita    
+    [SerializeField] float fixedDirection = -1;  // -1 == esquerda, 1 == direita
+    [SerializeField] AudioClip boing;
 
     //PlayerBehaviour playerBehaviour;
 
@@ -36,6 +38,11 @@ public class BF_PlayerKnockback : MonoBehaviour
             else
             {
                 directionX = fixedDirection;
+            }
+
+            if (boing != null)
+            {
+                AudioManager.Instance.PlaySFX(null, boing);
             }
             
             playerBehaviour.ApplyKnockback(force, new Vector2(directionX, 0));

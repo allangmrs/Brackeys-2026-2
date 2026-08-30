@@ -239,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549923635735435496, guid: 9008c600a7837f447afc31729a8eb33c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8974541347369741424, guid: 9008c600a7837f447afc31729a8eb33c, type: 3}
       propertyPath: dialogue
@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549923635735435496, guid: 9008c600a7837f447afc31729a8eb33c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8974541347369741424, guid: 9008c600a7837f447afc31729a8eb33c, type: 3}
       propertyPath: dialogue
@@ -3403,7 +3403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549923635735435496, guid: 9008c600a7837f447afc31729a8eb33c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8974541347369741424, guid: 9008c600a7837f447afc31729a8eb33c, type: 3}
       propertyPath: dialogue
@@ -3858,6 +3858,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5490160452114745940, guid: 61fa1db15ce7e0a418a6d1abad89c76e, type: 3}
   m_PrefabInstance: {fileID: 1707824476}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1339542253
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.4873
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.30036
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083200020400281958, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3768058646206817991, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
+      propertyPath: m_Name
+      value: Audio System
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
 --- !u!1001 &1347112799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3912,7 +3969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7549923635735435496, guid: 9008c600a7837f447afc31729a8eb33c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8974541347369741424, guid: 9008c600a7837f447afc31729a8eb33c, type: 3}
       propertyPath: dialogue
@@ -11125,3 +11182,4 @@ SceneRoots:
   - {fileID: 641228565}
   - {fileID: 985032910}
   - {fileID: 1905720592}
+  - {fileID: 1339542253}

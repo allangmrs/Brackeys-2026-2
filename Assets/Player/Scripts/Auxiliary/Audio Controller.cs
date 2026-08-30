@@ -23,7 +23,7 @@ namespace Player
 
         public void PlayDashSFX()
         {
-            OnSoundPlayed?.Invoke(null, playerAudioData.dashSFX);
+            //OnSoundPlayed?.Invoke(null, playerAudioData.dashSFX);
         }
 
         public void PlayDeathSFX()

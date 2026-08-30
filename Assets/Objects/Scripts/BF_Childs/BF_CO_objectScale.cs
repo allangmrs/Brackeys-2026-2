@@ -1,11 +1,13 @@
 using UnityEngine;
 using DG.Tweening;
+using AudioSystem;
 
 public class BF_CO_objectScale : BF_ChangeObject
 {
     [SerializeField] Vector2 scaleMultTarget;
     [SerializeField] float timeToTarget;
     [SerializeField] bool startColliderDisabled = false;
+    [SerializeField] private AudioClip scaleSFX;
 
     SpriteRenderer spriteRenderer;
     Vector3 originalScale;
@@ -43,6 +45,11 @@ public class BF_CO_objectScale : BF_ChangeObject
     protected override void ChangeObject()
     {
         base.ChangeObject();
+
+        if (scaleSFX != null)
+        {
+            AudioManager.Instance.PlaySFX(null, scaleSFX);
+        }
 
         transform.DOScale(Vector3.Scale(scaleMultTarget, transform.localScale), timeToTarget);
 

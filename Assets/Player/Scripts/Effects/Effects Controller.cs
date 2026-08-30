@@ -115,6 +115,8 @@ namespace Player
 
         private IEnumerator SpawnEffectsRoutine()
         {
+            //yield return new WaitForSeconds(1f);
+
             // Ativa o sprite
             spriteController.EnableSprite();
 

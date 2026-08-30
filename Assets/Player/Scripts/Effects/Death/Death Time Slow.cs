@@ -33,7 +33,7 @@ namespace Player.Effects
                 yield return null;
             }
 
-            Time.timeScale = 0;
+            DisableEffect();
         }
 
         private void OnDisable()

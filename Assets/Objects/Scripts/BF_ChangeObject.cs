@@ -6,7 +6,7 @@ public class BF_ChangeObject : MonoBehaviour
 {
     [SerializeField] BF_DetectPlayer detector;
 
-    [SerializeField] bool reset = false;
+    [SerializeField] protected bool reset = false;
     [SerializeField] bool resetDetector = false;
     [SerializeField] float resetTime;
 
@@ -29,11 +29,9 @@ public class BF_ChangeObject : MonoBehaviour
     {
         if (detector.playerDetected && !state)
         {
-            ChangeObject();
-
             state = true;
 
-            
+            ChangeObject();
         }
     }
 
@@ -55,6 +53,8 @@ public class BF_ChangeObject : MonoBehaviour
     
         state = false;
         detector.playerDetected = false;
+
+        //Debug.Log(this);
 
         // Classes filhas vão dar override
     }

@@ -5,7 +5,7 @@ using TreeEditor;
 
 public class BF_CO_changePosition : BF_ChangeObject
 {
-
+    [SerializeField] bool triggerOnce;
     [SerializeField] Transform newPos;
     Vector3 originalPos;
 
@@ -45,13 +45,19 @@ public class BF_CO_changePosition : BF_ChangeObject
         {
             transform.position = originalPos;
         }
+
+        if (!reset && !triggerOnce)
+        {
+            base.ResetObject();
+        }
+        
         
     }
 
     public override void ResetObject()
     {
         base.ResetObject();
-
+        
         transform.position = originalPos;
     }
 

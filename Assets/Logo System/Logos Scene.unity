@@ -382,6 +382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Logo System
       objectReference: {fileID: 0}
+    - target: {fileID: 8663277110998451091, guid: ebbf2d007c86b0e4ab59dd773cbacf3c, type: 3}
+      propertyPath: nextScene
+      value: MainMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

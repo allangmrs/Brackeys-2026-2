@@ -33,7 +33,11 @@ public class PlayerMenuGlue : MonoBehaviour
         Debug.Log("PAUESI PORRA" + isPaused);
         isPaused = !isPaused;
         pauseMenuController.TogglePause(isPaused);
-        pauseHandler.TogglePause(isPaused);
+
+        if (pauseHandler != null)
+        {
+            pauseHandler.TogglePause(isPaused);
+        }
     }
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)

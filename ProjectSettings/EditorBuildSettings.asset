@@ -9,16 +9,13 @@ EditorBuildSettings:
     path: Assets/Logo System/Logos Scene.unity
     guid: 21d83c81f3041df49927c39f6bdb83f9
   - enabled: 1
-    path: Assets/_Scenes/sla/Game1.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 0
-    path: Assets/_Scenes/Victory Screen.unity
-    guid: 15a28233fb37c35498ef9a21bb0024ba
-  - enabled: 1
-    path: Assets/Transition System/TransitionSystemExample.unity
-    guid: 7af310d8c8f630c47b2435d6249ce13f
+    path: Assets/_Scenes/MainMenu.unity
+    guid: 8634640cdfa4be34ea6bc9bdc21213b0
   - enabled: 1
     path: Assets/_Scenes/GameScene.unity
     guid: c600659289b232f4ab4be69e6aaa86c6
+  - enabled: 1
+    path: Assets/_Scenes/Final.unity
+    guid: 415c1085ae218fe48a92c71a1bc0e386
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

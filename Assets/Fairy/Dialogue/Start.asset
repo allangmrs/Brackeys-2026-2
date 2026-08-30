@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6e8993ed68f1c47b5bcfa27204605d, type: 3}
+  m_Name: Start
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueData
+  lines:
+  - Hey! You okay?
+  - ...
+  - You look a little lost.
+  - Do you even know where you are?
+  - ...
+  - No?
+  - Yeah...
+  - That makes sense.
+  - This forest tends to do that.
+  - People wander in... and then things get a little...
+  - <color=#AAAAAA><size=85%><i>weird.</i></size></color>
+  - Anyway!
+  - If you want to get out of here, just head to the right.
+  - I'll guide you.

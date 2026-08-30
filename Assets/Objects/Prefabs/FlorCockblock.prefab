@@ -178,7 +178,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5768982529612683157, guid: 930179525af2b0a4f9af7ee26908fd01, type: 3}
+  m_Sprite: {fileID: -2542995987112192354, guid: 930179525af2b0a4f9af7ee26908fd01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -253,6 +253,9 @@ MonoBehaviour:
   scaleMultTarget: {x: 1, y: 5}
   timeToTarget: 0.5
   startColliderDisabled: 1
+  changeSprite: 1
+  spriteOriginal: {fileID: -2542995987112192354, guid: 930179525af2b0a4f9af7ee26908fd01, type: 3}
+  spriteNovo: {fileID: 5768982529612683157, guid: 930179525af2b0a4f9af7ee26908fd01, type: 3}
 --- !u!114 &5679849589987850140
 MonoBehaviour:
   m_ObjectHideFlags: 0

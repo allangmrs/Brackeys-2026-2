@@ -6,6 +6,9 @@ public class BF_CO_objectScale : BF_ChangeObject
     [SerializeField] Vector2 scaleMultTarget;
     [SerializeField] float timeToTarget;
     [SerializeField] bool startColliderDisabled = false;
+    [SerializeField] bool changeSprite = false;
+    [SerializeField] Sprite spriteOriginal;
+    [SerializeField] Sprite spriteNovo;
 
     SpriteRenderer spriteRenderer;
     Vector3 originalScale;
@@ -44,6 +47,8 @@ public class BF_CO_objectScale : BF_ChangeObject
     {
         base.ChangeObject();
 
+        spriteRenderer.sprite = spriteNovo;
+
         transform.DOScale(Vector3.Scale(scaleMultTarget, transform.localScale), timeToTarget);
 
         if (startColliderDisabled)
@@ -59,6 +64,8 @@ public class BF_CO_objectScale : BF_ChangeObject
     public override void ResetObject()
     {
         base.ResetObject();
+
+        spriteRenderer.sprite = spriteOriginal;
 
         transform.DOScale(originalScale, timeToTarget);
 

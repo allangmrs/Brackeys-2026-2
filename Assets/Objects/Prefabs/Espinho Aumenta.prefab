@@ -256,3 +256,6 @@ MonoBehaviour:
   scaleMultTarget: {x: 1, y: 2}
   timeToTarget: 0.5
   startColliderDisabled: 0
+  changeSprite: 0
+  spriteOriginal: {fileID: 0}
+  spriteNovo: {fileID: 0}

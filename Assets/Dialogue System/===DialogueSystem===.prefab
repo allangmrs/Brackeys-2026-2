@@ -52,8 +52,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSystem.DialogueController
   dialogueUI: {fileID: 7351949285999575656}
   dialogueText: {fileID: 8114424756677436935}
-  typingSpeed: 0.05
+  typingSpeed: 0.03
   cameraController: {fileID: 9183151489644996695}
+  talkingSound:
+  - {fileID: 8300000, guid: a555b51c03b45114d9cea3c340986ef0, type: 3}
+  - {fileID: 8300000, guid: f2f92728178b1234c9794405f191f4da, type: 3}
+  - {fileID: 8300000, guid: 742383aba1c4e62479b3a675bfce02de, type: 3}
 --- !u!114 &9183151489644996695
 MonoBehaviour:
   m_ObjectHideFlags: 0

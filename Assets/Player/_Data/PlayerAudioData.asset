@@ -13,12 +13,10 @@ MonoBehaviour:
   m_Name: PlayerAudioData
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerAudioData
   walkSFXs:
-  - {fileID: 8300000, guid: ed63c316193234c499ce829b2bdf34b1, type: 3}
-  - {fileID: 8300000, guid: 648a4f862ff11ae498ba1f18428c77cc, type: 3}
-  - {fileID: 8300000, guid: 0cb8abcdfcdb2604789ef024604edd9d, type: 3}
-  - {fileID: 8300000, guid: b8641cc6eebd6f44a9c3c9a58a9db900, type: 3}
-  - {fileID: 8300000, guid: 45d0718383ca0d24cb019308fd383963, type: 3}
-  - {fileID: 8300000, guid: e279fa4acd2ec284ebd9ab41145a8075, type: 3}
+  - {fileID: 8300000, guid: efa8ae6347f657c47b54d34b62b5cd6d, type: 3}
+  - {fileID: 8300000, guid: 1d9501debb8ffd748b0ed1a875310f33, type: 3}
+  - {fileID: 8300000, guid: 123e2f9db54f6644584d181f47fd3e69, type: 3}
+  - {fileID: 8300000, guid: b7c416fbbbc34d74bafc09e0fdc2af52, type: 3}
   jumpSFX: {fileID: 8300000, guid: 91dad7a02dd5f3141a7db1244d54d8f8, type: 3}
   dashSFX: {fileID: 0}
   deathSFX: {fileID: 8300000, guid: e1f3039be910f40439d5ad45c1d4bceb, type: 3}

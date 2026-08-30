@@ -2,6 +2,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using AudioSystem;
 
 namespace DialogueSystem
 {
@@ -18,6 +19,9 @@ namespace DialogueSystem
 
         [Header("Camera")]
         [SerializeField] private DialogueCameraController cameraController;
+
+        [Header("Audio")]
+        [SerializeField] private AudioClip[] talkingSound;
 
         private DialogueData currentDialogue;
 
@@ -108,6 +112,15 @@ namespace DialogueSystem
                 char character = dialogueText.textInfo.characterInfo[i].character;
 
                 float delay = typingSpeed;
+
+                if (i % 2 == 0)
+                {
+                    if (talkingSound.Length > 0)
+                    {
+                        AudioClip clip = talkingSound[UnityEngine.Random.Range(0, talkingSound.Length)];
+                        AudioManager.Instance.PlaySFX(null, clip);
+                    }
+                }
 
                 if (character == '.' ||
                     character == '!' ||

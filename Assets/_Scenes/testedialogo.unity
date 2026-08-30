@@ -583,10 +583,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ===DialogueSystem===
       objectReference: {fileID: 0}
-    - target: {fileID: 6734075009649217178, guid: 9b6ee05ce3d4aba41a516caf08f21c4d, type: 3}
-      propertyPath: typingSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 6879561455191575490, guid: 9b6ee05ce3d4aba41a516caf08f21c4d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -665,10 +661,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6879561455191575490, guid: 9b6ee05ce3d4aba41a516caf08f21c4d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7351949285999575656, guid: 9b6ee05ce3d4aba41a516caf08f21c4d, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4409,8 +4401,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3371084712630577950, guid: 31a3dd2c95ee7a245adb5d3bff63d00f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3425056960692297841, guid: 31a3dd2c95ee7a245adb5d3bff63d00f, type: 3}
+      propertyPath: scaleSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: e2687c86dfd763e4b8043bf86d7b823b, type: 3}
+    - target: {fileID: 5679849589987850140, guid: 31a3dd2c95ee7a245adb5d3bff63d00f, type: 3}
+      propertyPath: boing
+      value: 
+      objectReference: {fileID: 8300000, guid: 81403b95fb4704d4aabab23bb068e7af, type: 3}
     - target: {fileID: 5953122229308571437, guid: 31a3dd2c95ee7a245adb5d3bff63d00f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7

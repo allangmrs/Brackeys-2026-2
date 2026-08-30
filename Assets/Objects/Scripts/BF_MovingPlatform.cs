@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BF_MovingPlatform : MonoBehaviour
 {
-    [SerializeField] private Vector3[] waypoints;
+    [SerializeField] private Transform[] waypoints;
     [SerializeField] private float speed = 3f;
     
     private Rigidbody2D rb;
@@ -15,14 +15,14 @@ public class BF_MovingPlatform : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 target = waypoints[targetIndex];
+        Transform target = waypoints[targetIndex];
 
-        Vector2 direction = target - transform.position;
+        Vector2 direction = target.position - transform.position;
         
         rb.linearVelocity = direction.normalized*speed;
 
 
-        if (Vector2.Distance(transform.position, target) < 0.1f)
+        if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
             targetIndex = (targetIndex + 1) % waypoints.Length;
         }

@@ -25,5 +25,7 @@ MonoBehaviour:
   - People wander in... and then things get a little...
   - <color=#AAAAAA><size=85%><i>weird.</i></size></color>
   - Anyway!
-  - If you want to get out of here, just head to the right.
-  - I'll guide you.
+  - 'If you want to get out of here, just head to the right. '
+  - Use WASD or Joystick to walk.
+  - Press Space or South Button to Jump.
+  - I'll guide you, don't worry.

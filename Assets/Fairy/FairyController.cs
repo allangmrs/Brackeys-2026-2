@@ -12,7 +12,6 @@ namespace Fairy
         [SerializeField] private Vector2 followOffset = new Vector2(0f, 1f);
 
         [SerializeField] private float followSmoothTime = 0.2f;
-        [SerializeField] private float flipSpeed = 8f;
         [SerializeField] private Transform visual;
 
         [Header("Floating")]

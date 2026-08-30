@@ -740,7 +740,7 @@ PrefabInstance:
     - target: {fileID: 3448339798871279035, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: 0b01bec3f920fdf49aabae7b7e89520a, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 3768058646206817991, guid: aedabf03f31fac04fa690f331d17e584, type: 3}
       propertyPath: m_Name
       value: Audio System

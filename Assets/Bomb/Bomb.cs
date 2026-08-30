@@ -13,7 +13,7 @@ namespace Assets.Bomb
         [SerializeField] private float fallTime = 0.5f;
         [SerializeField] private GameObject ground;
         [SerializeField] private Ease bombEase = Ease.InOutQuad;
-
+        [SerializeField] private bool isFinal = false;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -32,8 +32,14 @@ namespace Assets.Bomb
         private void Explode()
         {
             bomb.gameObject.SetActive(false);
-            ground.SetActive(false);
-            // Animação e som de explosão
+            
+            if (ground != null)
+                ground.SetActive(false);
+
+            if (isFinal)
+            {
+                // transicao FODA
+            }
         }
     }
 }

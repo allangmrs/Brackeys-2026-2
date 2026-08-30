@@ -47,7 +47,8 @@ public class BF_CO_objectScale : BF_ChangeObject
     {
         base.ChangeObject();
 
-        spriteRenderer.sprite = spriteNovo;
+        if (changeSprite)
+            spriteRenderer.sprite = spriteNovo;
 
         transform.DOScale(Vector3.Scale(scaleMultTarget, transform.localScale), timeToTarget);
 
@@ -65,7 +66,8 @@ public class BF_CO_objectScale : BF_ChangeObject
     {
         base.ResetObject();
 
-        spriteRenderer.sprite = spriteOriginal;
+        if (changeSprite)
+            spriteRenderer.sprite = spriteOriginal;
 
         transform.DOScale(originalScale, timeToTarget);
 
